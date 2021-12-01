@@ -1,0 +1,42 @@
+public class Solution {
+    public bool IsPalindrome(int x) {
+        
+        
+        int size = Convert.ToString(x).Length;
+            int turncount;
+            string xString = Convert.ToString(x);
+
+            if (Convert.ToString(x).Length % 2 == 0)
+            {
+                turncount = size / 2;
+            }
+            else
+            {
+                turncount = (size - 1) / 2;
+            }
+
+            bool ifPalindrome = true;
+            if (x < 0)
+            {
+                ifPalindrome = false;
+                return ifPalindrome;
+            }
+
+            else if (x > 0)
+            {
+                for (int i = 0; i < turncount; i++)
+                {
+                    if (xString[i] != xString[size - i - 1])
+                    {
+                        ifPalindrome = false;
+                        return ifPalindrome;
+                    }
+                }
+                return ifPalindrome;
+            }
+            else
+            {
+                return ifPalindrome;
+            }
+    }
+}
